@@ -1,0 +1,352 @@
+/* Estilos del botón Menú */
+.menu-btn {
+  position: fixed;
+  top: 10px; /* Mantiene el botón cerca de la parte superior */
+  right: 10px; /* Mantiene el botón cerca de la derecha */
+  display: flex;
+  align-items: center;
+  font-size: 1em; /* Tamaño más pequeño */
+  color: #000; /* Cambia el color del texto y barras a negro */
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-text {
+  margin-right: 5px; /* Menos espacio entre el texto y las barras */
+  font-size: 1em; /* Tamaño más pequeño */
+  font-weight: 500; /* Asegúrate de que el peso de la fuente sea más grueso (negrita) */
+  letter-spacing: 0.05em; /* Aumenta el espaciado entre las letras */
+  color: #000; /* Cambia el color del texto a negro */
+}
+
+.bars {
+  font-size: 1.5em; /* Reducir el tamaño de las barras */
+  color: #000; /* Cambia el color de las barras a negro */
+}
+
+/* Barra superior para el logo */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Blanco tenue y semitransparente */
+  backdrop-filter: blur(5px); /* Difuminar ligeramente el fondo */
+  padding: 20px 0;
+  z-index: 100; /* Asegurarse de que esté por encima de la imagen de fondo */
+  text-align: center;
+  transition: transform 0.5s ease-in-out; /* Transición para mover la barra hacia arriba */
+}
+
+/* Cuando el menú esté abierto, esconder la barra superior */
+.header-hidden {
+  transform: translateY(-100%); /* Mueve la barra completamente hacia arriba */
+}
+
+/* Estilos del menú lateral */
+.sidemenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* Blanco tenue y semitransparente */
+  backdrop-filter: blur(5px); /* Difuminar ligeramente el fondo */;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index: 999; /* Asegura que el menú esté por encima del header */
+}
+
+.sidemenu a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #000; /* Cambiar color de las letras a negro */
+  font-weight: 500; /* Asegúrate de que el peso de la fuente sea más grueso (negrita) */
+  letter-spacing: 0.05em; /* Aumenta el espaciado entre las letras */
+  display: block;
+  transition: 0.3s;
+}
+
+.sidemenu a:hover {
+  color: #555; /* Cambio a gris oscuro al hacer hover */
+}
+
+
+
+/* Resto de los estilos */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('/static/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* La imagen de fondo queda detrás de todo */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #f5f5f5;
+  background-color: #f5f5f5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('/static/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.info-box {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.pagina {
+  max-width: 60%;
+  height: auto;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Botón para abrir/cerrar el menú */
+.menu-btn {
+  position: fixed;
+  top: 10px; /* Más cerca de la parte superior */
+  right: 10px; /* Más cerca de la derecha */
+  display: flex;
+  align-items: center;
+  font-size: 1em; /* Tamaño más pequeño */
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-text {
+  margin-right: 5px; /* Menos espacio entre el texto y las barras */
+  font-size: 1em; /* Tamaño más pequeño */
+}
+
+.bars {
+  font-size: 1.5em; /* Reducir el tamaño de las barras */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+  position: absolute;
+  bottom: 100px; /* Mover más arriba */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espacio entre los íconos */
+}
+
+.social-icon {
+  width: 20px; /* Reducir el tamaño de los íconos */
+  height: 20px; /* Asegurarse de que tengan la misma altura */
+  margin: 5px;
+  cursor: pointer;
+}
+
+
+/* Barra superior con título */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Blanco tenue y semitransparente */
+  backdrop-filter: blur(5px); /* Difuminar ligeramente el fondo */
+  padding: 20px 0;
+  z-index: 100;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+header h1 {
+  font-size: 1.4em; /* Título más pequeño */
+  color: #000;
+  margin: 0;
+}
+
+/* Fondo blanco para la página */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Ajusta aquí el peso */
+  color: #000; /* Cambiar a negro para que sea visible sobre el fondo blanco */
+  background-color: #fff; /* Fondo blanco */
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Sección de vinos */
+.vinos-section {
+  display: flex;
+  justify-content: space-around;
+  margin: 150px auto; /* Ajuste para dejar espacio para la barra superior */
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* Estilo de cada cepa */
+.cepa {
+  width: 25%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cepa h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.cepa-img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cepa-img:hover {
+  transform: scale(1.05); /* Efecto hover para aumentar la imagen */
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 768px) {
+  .cepa {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+/* Botón para abrir/cerrar el menú */
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-text {
+  margin-right: 5px;
+  font-size: 1em;
+}
+
+.bars {
+  font-size: 1.5em;
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+/* Estilos del texto */
+h1, h2, .texto-grande {
+  font-family: 'Montserrat', sans-serif; /* Verifica que sea la familia correcta */
+  font-weight: 700; /* Asegúrate de que el peso de la fuente sea más grueso (negrita) */
+  letter-spacing: 0.05em; /* Aumenta el espaciado entre las letras */
+  text-transform: uppercase; /* Asegúrate de que todo el texto esté en mayúsculas si es necesario */
+  color: #f5f5f5; /* O el color que prefieras */
+}
+
+
+/* PAGINAS DE HISTORIAS DE VINO */
+
+/* Fondo color botella de vino */
+body.history {
+  background-color: #343b29; /* Color botella de vino oscuro */
+  color: #f5f5f5; /* Texto blanco para buen contraste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Asegura que el contenido esté en columna */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0;
+}
+
+/* Contenedor de la historia */
+.history-content {
+  position: relative; /* Contenedor relativo para posicionar el texto */
+  text-align: center;
+  padding: 20px;
+  max-width: 60%; /* Ajusta el tamaño máximo */
+  margin: 0 auto;
+}
+
+/* Imagen de la etiqueta del vino */
+.etiqueta-vino {
+  width: 100%; /* Asegúrate de que la imagen ocupe el ancho del contenedor */
+  height: auto;
+  display: block;
+}
+
+/* Texto superpuesto sobre la imagen */
+.texto-historia {
+  position: absolute; /* Posiciona el texto sobre la imagen */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura un centrado completo */
+  font-size: 1.4em;
+  color: #000; /* Texto negro para que simule estar escrito sobre la etiqueta */
+  width: 80%; /* Opcional: para restringir el ancho del texto */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif; /* Asegura la tipografía correcta */
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+  .history-content {
+    max-width: 90%;
+  }
+
+  .texto-historia {
+    font-size: 1.2em;
+    width: 90%; /* Ajusta el ancho del texto en móviles */
+  }
+}

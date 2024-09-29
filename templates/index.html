@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garnacha Huaso de Sauzal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("menu");
+      var header = document.querySelector("header");
+
+      if (menu.style.width === "250px") {
+        menu.style.width = "0";
+        header.classList.remove("header-hidden"); /* Mostrar la barra superior */
+      } else {
+        menu.style.width = "250px";
+        header.classList.add("header-hidden"); /* Ocultar la barra superior */
+      }
+    }
+  </script>
+</head>
+<body class="fade-enter">
+  <!-- Menú de 3 barras -->
+  <div id="menu" class="sidemenu">
+    <a href="{{ url_for('quienes_somos') }}">QUIÉNES SOMOS</a>
+    <a href="{{ url_for('nuestros_vinos') }}">NUESTROS VINOS</a>
+    <a href="{{ url_for('contacto') }}">CONTACTO</a>
+    <!-- Logos de redes sociales -->
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/huasodesauzal/?hl=es" target="_blank">
+        <img src="{{ url_for('static', filename='ig.png') }}" alt="Instagram" class="social-icon">
+      </a>
+      <a href="https://www.whatsapp.com" target="_blank">
+        <img src="{{ url_for('static', filename='whatsapp.png') }}" alt="WhatsApp" class="social-icon">
+      </a>
+    </div>
+  </div>
+
+  <!-- Botón para abrir/cerrar el menú -->
+  <div class="menu-btn" onclick="toggleMenu()">
+    <span class="menu-text">MENÚ</span> <span class="bars">&#9776;</span>
+  </div>
+
+  <!-- Logo en el centro -->
+  <header>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
+  </header>
+
+  <!-- Imagen de fondo con caja de texto -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>HUASO DE SAUZAL</h1>
+    </div>
+  </section>
+
+  <!-- Caja blanca con imagen botella.webp -->
+  <section class="info-box">
+    <a href="{{ url_for('history') }}" class="transition">
+      <img src="{{ url_for('static', filename='botella.webp') }}" alt="Imagen historia del vino" class="pagina">
+    </a>      
+  </section>
+
+  <!-- Cargar el script para transiciones -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
