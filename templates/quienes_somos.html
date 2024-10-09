@@ -4,14 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiénes Somos</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_quienes_somos.css') }}">
 </head>
-<body class="fade-enter">
+<body>
+
+  <!-- Barra superior con logo y flecha de retroceso -->
   <header>
-    <h1>Quiénes Somos</h1>
+    <a href="{{ url_for('home') }}" class="back-arrow">←</a> <!-- Flecha de retroceso a la página principal -->
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
   </header>
-  <section>
-    <p>Esta es la sección donde puedes describir la historia de la empresa Huaso de Sauzal, su misión y visión.</p>
+
+  <!-- Sección de la historia y la galería -->
+  <section class="container">
+    <div class="history-section">
+      <h2 class="history-title">NUESTRA HISTORIA</h2>
+      <p class="history-text">
+        Nuestra viña, ubicada en el corazón de Chile, ha sido parte de la tradición familiar por generaciones. Nos
+        dedicamos con pasión a la elaboración de vinos de calidad, respetando los métodos tradicionales y al mismo tiempo
+        implementando las innovaciones necesarias para ofrecer lo mejor a nuestros clientes. Con años de experiencia en
+        la viticultura, nuestros viñedos son el resultado del trabajo arduo y el amor por la tierra.
+      </p>
+      <p class="history-text">
+        Cada botella refleja nuestro compromiso con la excelencia, ofreciendo sabores únicos que cuentan la historia de
+        nuestra familia y nuestro terruño. Ven a conocer más sobre nuestra viña y disfruta de una experiencia inolvidable.
+      </p>
+    </div>
+
+    <!-- Galería de imágenes -->
+    <div class="gallery-container">
+      <div class="gallery-slides">
+        <img src="{{ url_for('static', filename='renan 1 renan 2.jpg') }}" alt="Imagen 1">
+      </div>
+      <div class="gallery-slides">
+        <img src="{{ url_for('static', filename='renan.png') }}" alt="Imagen 2">
+      </div>
+      <div class="gallery-slides">
+        <img src="{{ url_for('static', filename='Cultivo del viñedo.jpg') }}" alt="Imagen 3">
+      </div>
+      <div class="gallery-slides">
+        <img src="{{ url_for('static', filename='Canastos de uva.jpg') }}" alt="Imagen 4">
+      </div>
+      <div class="gallery-slides">
+        <img src="{{ url_for('static', filename='Foto campo.png') }}" alt="Imagen 6">
+      </div>
+      <!-- Flechas de navegación -->
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+      <!-- Indicadores (puntos) -->
+      <div class="dots">
+        <span class="dot" onclick="setCurrentSlide(1)"></span>
+        <span class="dot" onclick="setCurrentSlide(2)"></span>
+        <span class="dot" onclick="setCurrentSlide(3)"></span>
+      </div>
+    </div>
   </section>
+
+  <script>
+    let slideIndex = 0;
+    let slides = document.getElementsByClassName("gallery-slides");
+    let dots = document.getElementsByClassName("dot");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active-dot";
+    }
+
+    function changeSlide(n) {
+      slideIndex += n - 1;
+      if (slideIndex < 0) { slideIndex = slides.length - 1 }
+      if (slideIndex >= slides.length) { slideIndex = 0 }
+      showSlides();
+    }
+
+    function setCurrentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    showSlides();
+  </script>
+
+  <!-- Barra inferior con texto -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+
 </body>
 </html>

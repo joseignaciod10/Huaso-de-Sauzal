@@ -1,0 +1,198 @@
+/* Barra superior con logo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px; 
+    background-color: #ffffff;
+    padding: 0;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    max-width: 100px;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  /* Flecha de retroceso */
+  .back-arrow {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2em;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .back-arrow:hover {
+    color: #333; 
+  }
+  
+  /* Título principal debajo de la barra superior */
+  .page-title {
+    margin-top: 90px; /* Añade más margen debajo de la barra superior */
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Sección de vinos */
+  .vinos-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 100%;
+    min-height: 70vh; 
+  }
+  
+  /* Estilo de cada cepa */
+  .cepa {
+    width: 25%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .cepa h2 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #000;
+    position: relative; /* Para posicionar la caja debajo del texto */
+}
+
+.cepa h2::after {
+    content: '';
+    display: block;
+    width: 100%; /* Ajusta el ancho de la caja según necesites */
+    height: 5px; /* Ajusta la altura de la caja */
+    background-color: #e1decd; /* Color plomo para la caja */
+    margin-top: 10px; /* Espacio entre el texto y la caja */
+}
+
+  .cepa-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .cepa-img:hover {
+    transform: scale(1.05); 
+  }
+  
+  /* Barra inferior no anclada */
+  .footer-bar {
+    position: relative; /* Cambia a relative para que no esté anclada */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.5em;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .footer-bar p {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  /* Adaptación a pantallas pequeñas */
+  @media (max-width: 768px) {
+    .cepa {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+/* Modal background */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  /* Logo dentro del modal */
+  .modal-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Estilos del texto dentro del modal */
+  .modal-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  /* Barra inferior no anclada */
+  .footer-bar {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #8c8b87;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.5em;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .footer-bar p {
+    margin: 0;
+    font-weight: 500;
+  }
+

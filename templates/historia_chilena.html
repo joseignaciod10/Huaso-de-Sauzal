@@ -4,14 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historia de la Garnacha</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_historias.css') }}">
 </head>
 <body class="history">
+
+  <!-- Flecha para retroceder -->
+  <a href="{{ url_for('nuestros_vinos') }}" class="back-arrow">←</a>
+
+  <!-- Contenido de la historia -->
   <div class="history-content">
+    <!-- Imagen de la etiqueta de vino -->
     <img src="{{ url_for('static', filename='pagina.png') }}" alt="Etiqueta de vino Garnacha" class="etiqueta-vino">
+
+    <!-- Caja blanca sobre la imagen con el logo centrado -->
+    <div class="logo-container">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
+    </div>
+
     <div class="texto-historia">
       <p>Texto sobre la historia del vino Garnacha aquí...</p>
     </div>
   </div>
+
+  <!-- Barra inferior con texto -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+  
 </body>
 </html>

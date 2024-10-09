@@ -1,0 +1,155 @@
+/* Barra superior con logo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    padding: 0;
+    z-index: 100;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin: 10px 0;
+}
+
+/* Flecha de retroceso */
+.back-arrow {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2em;
+    color: #000;
+    text-decoration: none;
+}
+
+.back-arrow:hover {
+    color: #333;
+}
+
+/* Título principal debajo de la barra superior */
+.page-title {
+    margin-top: 90px;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+
+/* Estilos para pantallas grandes (PC) */
+@media screen and (min-width: 769px) {
+    /* Sección de contacto y foto */
+    .contact-section {
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Estilo para la información de contacto en PC */
+    .contact-info {
+        flex: 1;
+        padding-right: 20px;
+        margin-right: 80px; /* Mueve la información más a la derecha */
+        margin-left: 250px; /* Mantiene el margen de 200px en PC */
+        margin-top: 100px;
+    }
+
+    .contact-info h2 {
+        font-size: 2.5em;
+        color: #333;
+        text-align: left; /* Alinea el título a la izquierda */
+    }
+
+    .contact-info p {
+        font-size: 1.2em;
+        color: #666;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+
+    /* Estilo para la imagen de contacto */
+    .contact-image {
+        flex: 1;
+        max-width: 600px;
+        text-align: center;
+        margin-right: 180px;
+        margin-top: 180px;
+    }
+
+    .contact-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        top: -170px; /* Ajusta para mover la imagen hacia arriba */
+        clip-path: inset(5% 0 5% 0);
+    }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contact-info {
+        margin: 0; /* Elimina los márgenes laterales en móviles */
+        text-align: center; /* Centra el texto en móviles */
+        margin-top: 20px;
+    }
+
+    .contact-info h2 {
+        text-align: center; /* Alinea el título al centro en móviles */
+        margin-top: 20px;
+    }
+
+    /* Estilo para la imagen de contacto */
+    .contact-image {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .contact-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        clip-path: inset(5% 0 5% 0);
+        position: relative;
+        top: 0; /* Elimina el desplazamiento hacia arriba en móviles */
+    }
+}
+
+/* Barra inferior */
+.footer-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #8c8b87;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.5em;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    box-shadow: none;
+}
+
+.footer-bar p {
+    margin: 0;
+    font-weight: 500;
+}

@@ -16,6 +16,9 @@ def history():
 @app.route('/quienes-somos')
 def quienes_somos():
     return render_template('quienes_somos.html')
+@app.route('/galeria')
+def galeria():
+    return render_template('galeria.html') 
 
 # Ruta para la página Nuestros vinos
 @app.route('/nuestros-vinos')
@@ -26,6 +29,7 @@ def nuestros_vinos():
 @app.route('/contacto')
 def contacto():
     return render_template('contacto.html')
+
 # Ruta para la historia de Cariñena
 @app.route('/historia_carinena')
 def historia_carinena():

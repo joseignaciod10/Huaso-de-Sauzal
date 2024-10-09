@@ -4,14 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_contacto.css') }}">
 </head>
-<body class="fade-enter">
+<body>
+
+  <!-- Barra superior con logo y flecha de retroceso -->
   <header>
-    <h1>Contacto</h1>
+    <a href="{{ url_for('home') }}" class="back-arrow">←</a>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
   </header>
-  <section>
-    <p>Proporciona aquí un formulario de contacto o la información de contacto de la empresa.</p>
+
+  <!-- Título debajo de la barra superior -->
+  <h1 class="page-title">CONTÁCTANOS</h1>
+
+  <!-- Sección de contacto y foto -->
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Información de Contacto</h2>
+      <p>Dirección: Calle  123, Santiago, Chile</p>
+      <p>Teléfono: +56 9 8888 8888</p>
+      <p>Email: contacto@huasodesauzal.cl</p>
+      <p>Horario de atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+    </div>
+
+    <!-- Imagen de contacto -->
+    <div class="contact-image">
+      <img src="{{ url_for('static', filename='Foto campo.png') }}" alt="Imagen de contacto" class="contact-img">
+    </div>
   </section>
+
+  <!-- Barra inferior con texto -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+
 </body>
 </html>

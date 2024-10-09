@@ -29,13 +29,23 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2); /* Blanco tenue y semitransparente */
-  backdrop-filter: blur(5px); /* Difuminar ligeramente el fondo */
-  padding: 20px 0;
-  z-index: 100; /* Asegurarse de que esté por encima de la imagen de fondo */
+  height: 40px; /* Ajusta esta altura al tamaño exacto de tu logo */
+  background-color: #ffffff; /* Color sólido del fondo del logo */
+  padding: 0; /* Elimina los márgenes internos */
+  z-index: 100; /* Asegúrate de que esté por encima de la imagen de fondo */
   text-align: center;
   transition: transform 0.5s ease-in-out; /* Transición para mover la barra hacia arriba */
+  margin-top: 0;
 }
+
+.logo {
+  max-width: 100px;
+  height: 120%; /* Asegura que el logo ocupe el 100% de la altura de la barra */
+  margin-top: 0;
+  margin: 0; /* Elimina cualquier margen */
+  padding: 0; /* Elimina cualquier padding */
+}
+
 
 /* Cuando el menú esté abierto, esconder la barra superior */
 .header-hidden {
@@ -88,7 +98,6 @@ header {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
   color: #f5f5f5;
   background-color: #f5f5f5;
   transition: opacity 0.5s ease-in-out;
@@ -99,17 +108,27 @@ header {
   padding: 20px 0;
 }
 
-.logo {
-  max-width: 150px;
-  height: auto;
-}
-
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('/static/fondo.jpg');
   background-size: cover;
   background-position: center;
+  z-index: 1; /* Asegura que el contenido dentro esté por encima */
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/static/fondo.jpg'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(5%) brightness(80%); /* Filtro aplicado solo a la imagen */
+  z-index: -1; /* Asegura que esté detrás del contenido */
 }
 
 .overlay {
@@ -157,37 +176,38 @@ header {
   font-size: 1.5em; /* Reducir el tamaño de las barras */
 }
 
-/* Estilos para los íconos de redes sociales */
-.social-icons {
+/* Estilos del texto "VISITA NUESTRAS REDES" */
+.social-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
-  bottom: 100px; /* Mover más arriba */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 100px; /* Ajusta según sea necesario para posicionar correctamente */
+  width: 100%;
+  text-align: center;
+}
+
+.social-text {
+  margin-bottom: 15px; /* Espacio entre el texto y los íconos de redes sociales */
+  font-size: 0.6em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #000; /* Color del texto */
+}
+
+/* Asegúrate de que los íconos de las redes sociales sigan igual */
+.social-icons {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Espacio entre los íconos */
+  gap: 15px;
 }
 
 .social-icon {
-  width: 20px; /* Reducir el tamaño de los íconos */
-  height: 20px; /* Asegurarse de que tengan la misma altura */
-  margin: 5px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 
-
-/* Barra superior con título */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.2); /* Blanco tenue y semitransparente */
-  backdrop-filter: blur(5px); /* Difuminar ligeramente el fondo */
-  padding: 20px 0;
-  z-index: 100;
-  text-align: center;
-  transition: transform 0.5s ease-in-out;
-}
 
 header h1 {
   font-size: 1.4em; /* Título más pequeño */
@@ -199,7 +219,6 @@ header h1 {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 400; /* Ajusta aquí el peso */
   color: #000; /* Cambiar a negro para que sea visible sobre el fondo blanco */
   background-color: #fff; /* Fondo blanco */
@@ -269,75 +288,14 @@ body {
   font-size: 1.5em;
 }
 
-/* Estilos para los íconos de redes sociales */
-.social-icons {
-  position: absolute;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  margin: 5px;
-  cursor: pointer;
-}
 /* Estilos del texto */
 h1, h2, .texto-grande {
-  font-family: 'Montserrat', sans-serif; /* Verifica que sea la familia correcta */
   font-weight: 700; /* Asegúrate de que el peso de la fuente sea más grueso (negrita) */
   letter-spacing: 0.05em; /* Aumenta el espaciado entre las letras */
   text-transform: uppercase; /* Asegúrate de que todo el texto esté en mayúsculas si es necesario */
   color: #f5f5f5; /* O el color que prefieras */
 }
 
-
-/* PAGINAS DE HISTORIAS DE VINO */
-
-/* Fondo color botella de vino */
-body.history {
-  background-color: #343b29; /* Color botella de vino oscuro */
-  color: #f5f5f5; /* Texto blanco para buen contraste */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Asegura que el contenido esté en columna */
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-  margin: 0;
-}
-
-/* Contenedor de la historia */
-.history-content {
-  position: relative; /* Contenedor relativo para posicionar el texto */
-  text-align: center;
-  padding: 20px;
-  max-width: 60%; /* Ajusta el tamaño máximo */
-  margin: 0 auto;
-}
-
-/* Imagen de la etiqueta del vino */
-.etiqueta-vino {
-  width: 100%; /* Asegúrate de que la imagen ocupe el ancho del contenedor */
-  height: auto;
-  display: block;
-}
-
-/* Texto superpuesto sobre la imagen */
-.texto-historia {
-  position: absolute; /* Posiciona el texto sobre la imagen */
-  top: 50%; /* Centrado verticalmente */
-  left: 50%; /* Centrado horizontalmente */
-  transform: translate(-50%, -50%); /* Asegura un centrado completo */
-  font-size: 1.4em;
-  color: #000; /* Texto negro para que simule estar escrito sobre la etiqueta */
-  width: 80%; /* Opcional: para restringir el ancho del texto */
-  text-align: center;
-  font-family: 'Montserrat', sans-serif; /* Asegura la tipografía correcta */
-}
 
 /* Adaptación para pantallas pequeñas */
 @media (max-width: 768px) {
@@ -349,4 +307,86 @@ body.history {
     font-size: 1.2em;
     width: 90%; /* Ajusta el ancho del texto en móviles */
   }
+}
+
+/* Estilo para la nueva imagen de fondo */
+.extra-background {
+  position: relative;
+  height: 100vh; /* Ocupa la altura de la pantalla completa */
+  background-image: url('/static/nueva-imagen.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+}
+
+.extra-image {
+  display: block;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+/* Barra inferior transparente, similar a la sidebar */
+.footer-bar {
+  position: relative;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05); /* Mucho más transparente */
+  color: #8c8b87; /* Color de texto negro */
+  text-align: center; /* Centra el texto */
+  padding: 10px 0;
+  font-size: 0.5em; /* Tamaño de letra */
+  backdrop-filter: blur(5px); /* Difuminado */
+  z-index: 1000;
+  box-shadow: none; /* Sin sombra para que sea más tenue */
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Borde tenue */
+}
+
+.footer-bar p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.texto-overlay {
+  text-align: center;
+  font-weight: 700;
+  color: #f5f5f5;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  padding: 20px 40px;
+  z-index: 1;
+}
+
+.texto-overlay .linea-1 {
+  display: block;  /* Cada línea se mostrará como un bloque */
+  font-size: 1.5em;
+  text-align: right;  /* Tamaño de la primera línea */
+}
+
+.texto-overlay .linea-2 {
+  display: block;  /* Cada línea se mostrará como un bloque */
+  font-size: 1em; /* Tamaño de la segunda línea */
+  margin-top: 10px; /* Espaciado entre líneas */
+  text-align: right; /* Desplazamiento hacia la derecha */
+}
+
+/* Caja blanca entre las imágenes */
+.content-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0; /* Ajusta el padding según el espacio que quieras */
+  background-color: #ffffff; /* Fondo blanco */
+  margin: 0 auto; /* Centrado */
+}
+
+.white-box {
+  width: 100%; /* Ajusta el ancho de la caja */
+  height: 500px; /* Ajusta la altura según lo que necesites */
+  background-color: #ffffff; /* Fondo blanco */
+  text-align: center; /* Centrado del contenido dentro de la caja */
+  padding: 20px; /* Ajuste del relleno interno */
 }

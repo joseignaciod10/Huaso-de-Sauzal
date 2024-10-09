@@ -4,14 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuestros Vinos</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_vinos.css') }}">
 </head>
 <body>
 
-  <!-- Barra superior con título -->
+  <!-- Barra superior con logo y flecha de retroceso -->
   <header>
-    <h1>NUESTROS VINOS</h1>
+    <a href="{{ url_for('home') }}" class="back-arrow">←</a>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
   </header>
+
+  <!-- Título debajo de la barra -->
+  <h1 class="page-title">NUESTROS VINOS</h1>
 
   <!-- Sección de vinos -->
   <section class="vinos-section">
@@ -40,6 +44,42 @@
     </div>
   </section>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <!-- Modal para el pop-up -->
+  <div id="popupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="modal-logo">
+      <p>Presiona sobre tu vino para más información.</p>
+    </div>
+  </div>
+
+  <!-- Barra inferior no anclada -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+
+  <script>
+    // Mostrar el modal al cargar la página
+    window.onload = function() {
+      var modal = document.getElementById("popupModal");
+      var closeModal = document.getElementsByClassName("close")[0];
+
+      // Mostrar el modal
+      modal.style.display = "block";
+
+      // Cerrar el modal cuando se hace clic en la 'x'
+      closeModal.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // Cerrar el modal al hacer clic fuera de la ventana del modal
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    };
+  </script>
 </body>
 </html>
+

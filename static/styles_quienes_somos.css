@@ -1,0 +1,154 @@
+/* Estilos para la barra superior con logo */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px; 
+  background-color: #ffffff;
+  padding: 0;
+  z-index: 100;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* Estilos para la flecha de retroceso */
+.back-arrow {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 2em;
+  color: #000;
+  text-decoration: none;
+}
+
+.back-arrow:hover {
+  color: #333;
+}
+
+/* Estilos para la disposición de la página */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 20px 20px;
+}
+
+/* Estilos para el título y el texto de la historia */
+.history-section {
+  flex: 1;
+  max-width: 45%;
+  padding-right: 20px;
+}
+
+.history-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.history-text {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #666;
+  text-align: justify;
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  height: 400px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0.2, 0.2, 0.2, 0.2);
+}
+
+/* Imágenes dentro de la galería */
+.gallery-slides {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flechas de navegación */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em; /* Reduce ligeramente el tamaño */
+  padding: 8px; /* Ajusta el padding para que se vean más delicadas */
+  cursor: pointer;
+  color: #fff; /* Cambia el color del texto a blanco */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo más oscuro y sutil */
+  border-radius: 50%; /* Hacer las flechas completamente redondas */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza la transición al hacer hover */
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo un poco más oscuro al hacer hover */
+  transform: translateY(-50%) scale(1.1); /* Ligeramente más grande al pasar el cursor */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+/* Barra inferior fija */
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #8c8b87;
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.5em;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  box-shadow: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bar p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Apila los elementos en lugar de alinearlos uno al lado del otro */
+  }
+
+  .history-section {
+    max-width: 100%; /* La historia ocupa todo el ancho */
+    padding-right: 0; /* Elimina el padding a la derecha */
+    margin-bottom: 20px; /* Añade un espacio entre la historia y la galería */
+  }
+
+  .gallery-container {
+    max-width: 100%; /* La galería también ocupa todo el ancho */
+    height: 300px; /* Ajusta la altura del contenedor en móvil */
+  }
+}
