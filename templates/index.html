@@ -37,7 +37,7 @@
         <a href="https://www.instagram.com/huasodesauzal/?hl=es" target="_blank">
           <img src="{{ url_for('static', filename='ig.png') }}" alt="Instagram" class="social-icon">
         </a>
-        <a href="https://www.whatsapp.com" target="_blank">
+        <a href="https://wa.me/+56998186847" target="_blank">
           <img src="{{ url_for('static', filename='whatsapp.png') }}" alt="WhatsApp" class="social-icon">
         </a>
       </div>
@@ -71,19 +71,55 @@
   <!-- Caja blanca entre las dos imágenes -->
   <section class="content-box">
     <div class="white-box">
-      <!-- Aquí puedes agregar el contenido que desees -->
+      <div class="box-content">
+        <h2 class="box-title">CONOCE NUESTROS VINOS</h2>
+        <img src="{{ url_for('static', filename='chilena.webp') }}" alt="Botella de Vino" class="botella-img">
+      </div>
     </div>
   </section>
 
-  <!-- Nueva imagen que reemplaza la caja -->
-  <section class="extra-background">
-    <img src="{{ url_for('static', filename='renan.png') }}" alt="Nueva imagen de fondo" class="extra-image">
-  </section>
+
+  <!-- Nueva imagen que reemplaza la caja con texto superpuesto -->
+<section class="extra-background">
+  <img src="{{ url_for('static', filename='Renán - copia.jpg') }}" alt="Nueva imagen de fondo" class="extra-image">
+  
+  <!-- Texto superpuesto alineado a la izquierda -->
+  <div class="extra-text-overlay">
+    <span class="linea-1">VISITA</span>
+    <span class="linea-1">NUESTRAS</span>
+    <span class="linea-2">REDES SOCIALES</span>
+  </div>
+</section>
+
 
   <!-- Barra inferior con texto -->
   <footer class="footer-bar">
     <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
   </footer>
+
+   <!-- JavaScript to handle scroll and add 'appear' class to both elements -->
+   <script>
+    window.addEventListener('scroll', function() {
+      var whiteBox = document.querySelector('.white-box');
+      var extraImage = document.querySelector('.extra-image');
+      
+      // Get positions of both elements
+      var boxPosition = whiteBox.getBoundingClientRect().top;
+      var imagePosition = extraImage.getBoundingClientRect().top;
+
+      // Adjust the threshold to trigger earlier
+      var screenPosition = window.innerHeight / 1.2;
+
+      // Trigger the appear class
+      if (boxPosition < screenPosition) {
+        whiteBox.classList.add('appear');
+      }
+
+      if (imagePosition < screenPosition) {
+        extraImage.classList.add('appear');
+      }
+    });
+  </script>
 
 </body>
 </html>

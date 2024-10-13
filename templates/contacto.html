@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles_contacto.css') }}">
+  <style>
+    /* Estilos para los enlaces de correo */
+    a {
+      color: #8c8b87; /* Cambia el color del enlace */
+      text-decoration: none; /* Elimina el subrayado por defecto */
+    }
+
+    a:hover {
+      color: #8c8b87; /* Cambia el color al pasar el cursor */
+      text-decoration: underline; /* O agrega subrayado solo al pasar el cursor si deseas */
+    }
+  </style>
 </head>
 <body>
 
@@ -21,15 +33,15 @@
   <section class="contact-section">
     <div class="contact-info">
       <h2>Información de Contacto</h2>
-      <p>Dirección: Calle  123, Santiago, Chile</p>
-      <p>Teléfono: +56 9 8888 8888</p>
-      <p>Email: contacto@huasodesauzal.cl</p>
-      <p>Horario de atención: Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+      <p>Renán Cancino: +56 9 9818 6847</p>
+      <p>Sofía Jiménez: +56 9 9872 2221</p>
+      <p>Email: <a href="mailto:renancancinoa@gmail.com">renancancinoa@gmail.com</a> - <a href="mailto:sofiajimenezt@gmail.com">sofiajimenezt@gmail.com</a></p>
+      <p>Horario de atención: Lunes a Viernes, 9:00 - 18:00 HRS</p>
     </div>
 
     <!-- Imagen de contacto -->
     <div class="contact-image">
-      <img src="{{ url_for('static', filename='Foto campo.png') }}" alt="Imagen de contacto" class="contact-img">
+      <img src="{{ url_for('static', filename='Foto Renán.png') }}" alt="Imagen de contacto" class="contact-img">
     </div>
   </section>
 
@@ -37,6 +49,7 @@
   <footer class="footer-bar">
     <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
   </footer>
+  
 
 </body>
 </html>

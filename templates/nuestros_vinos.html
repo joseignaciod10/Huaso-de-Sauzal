@@ -80,6 +80,36 @@
       }
     };
   </script>
+  <script>
+    window.addEventListener('scroll', function() {
+      var cariñenaImg = document.querySelector('.cepa-img[alt="Cariñena"]');
+      var chilenaImg = document.querySelector('.cepa-img[alt="Chilena"]');
+      var garnachaImg = document.querySelector('.cepa-img[alt="Garnacha"]');
+      
+      // Obtener la posición de las imágenes
+      var cariñenaPosition = cariñenaImg.getBoundingClientRect().top;
+      var chilenaPosition = chilenaImg.getBoundingClientRect().top;
+      var garnachaPosition = garnachaImg.getBoundingClientRect().top;
+  
+      // Obtener la altura de la ventana del navegador
+      var screenPosition = window.innerHeight / 1.2;
+  
+      // Activar la clase 'appear' cuando las imágenes estén visibles
+      if (cariñenaPosition < screenPosition) {
+        cariñenaImg.classList.add('appear');
+      }
+  
+      if (chilenaPosition < screenPosition) {
+        chilenaImg.classList.add('appear');
+      }
+  
+      if (garnachaPosition < screenPosition) {
+        garnachaImg.classList.add('appear');
+      }
+    });
+  </script>
+  
+  
 </body>
 </html>
 

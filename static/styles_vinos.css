@@ -113,6 +113,17 @@ header {
       width: 100%;
       margin-bottom: 20px;
     }
+      /* Estilos para la animación de aparición */
+    .cepa-img {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+    .appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
 /* Modal background */
@@ -195,4 +206,3 @@ header {
     margin: 0;
     font-weight: 500;
   }
-

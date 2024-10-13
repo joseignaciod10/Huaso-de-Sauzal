@@ -307,13 +307,38 @@ h1, h2, .texto-grande {
     font-size: 1.2em;
     width: 90%; /* Ajusta el ancho del texto en móviles */
   }
+    /* Texto superpuesto sobre imagen renan */
+  .extra-text-overlay {
+    text-align: left;
+    font-weight: 700;
+    color: #f5f5f5;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    z-index: 1;
+  }
+
+  .extra-text-overlay .linea-1 {
+    display: block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1.5em;
+    text-align: left; /* Desplazamiento hacia la derecha */
+  }
+
+  .extra-text-overlay .linea-2 {
+    display: block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: left; /* Desplazamiento hacia la derecha */
+  }
+
 }
 
 /* Estilo para la nueva imagen de fondo */
 .extra-background {
   position: relative;
   height: 100vh; /* Ocupa la altura de la pantalla completa */
-  background-image: url('/static/nueva-imagen.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -373,20 +398,104 @@ h1, h2, .texto-grande {
   text-align: right; /* Desplazamiento hacia la derecha */
 }
 
-/* Caja blanca entre las imágenes */
-.content-box {
+/* Caja blanca general */
+.white-box {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 50px 0; /* Ajusta el padding según el espacio que quieras */
-  background-color: #ffffff; /* Fondo blanco */
-  margin: 0 auto; /* Centrado */
+  padding: 30px;  /* Reduce el padding para pantallas grandes */
+  background-color: #ffffff;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  max-width: 90%; /* Ajusta el ancho máximo para pantallas grandes */
 }
 
-.white-box {
-  width: 100%; /* Ajusta el ancho de la caja */
-  height: 500px; /* Ajusta la altura según lo que necesites */
-  background-color: #ffffff; /* Fondo blanco */
-  text-align: center; /* Centrado del contenido dentro de la caja */
-  padding: 20px; /* Ajuste del relleno interno */
+/* Específicamente para pantallas grandes */
+@media (min-width: 769px) {
+  .white-box {
+    max-width: 800px; /* Limita el ancho en pantallas grandes */
+    padding: 20px 40px; /* Ajusta el padding para pantallas grandes */
+    margin: 50px auto; /* Añade margen superior e inferior */
+  }
+
+  .box-title {
+    font-size: 1.8em; /* Ajusta el tamaño del texto en pantallas grandes */
+  }
+
+  .botella-img {
+    max-width: 10000px; /* Reduce el tamaño de la imagen de la botella en pantallas grandes */
+    height: auto;
+  }
+  /* Texto superpuesto sobre imagen renan */
+  .extra-text-overlay {
+    text-align: left;
+    font-weight: 700;
+    color: #f5f5f5;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    z-index: 1;
+  }
+
+  .extra-text-overlay .linea-1 {
+    display: inline-block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1.5em;
+    text-align: left; /* Desplazamiento hacia la derecha */
+  }
+
+  .extra-text-overlay .linea-2 {
+    display: block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: left; /* Desplazamiento hacia la derecha */
+  }
+
 }
+
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.box-title {
+  font-size: 2em;
+  color: #333;
+}
+
+.botella-img {
+  max-width: 150px;
+  height: auto;
+  margin-left: 20px;
+}
+
+/* Transition when scrolled into view */
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* Add transition for the extra-image */
+.extra-image {
+  display: block;
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+
+/* When element is in view */
+.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
