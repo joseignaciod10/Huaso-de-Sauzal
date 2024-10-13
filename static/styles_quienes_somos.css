@@ -47,14 +47,21 @@ header {
 }
 
 .history-title {
-  font-size: 2em;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.history-subtitle {
+  font-size: 1em;
   font-weight: bold;
   margin-bottom: 20px;
   color: #333;
 }
 
 .history-text {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 1.5;
   color: #666;
   text-align: justify;

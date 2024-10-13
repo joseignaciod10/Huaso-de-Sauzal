@@ -58,17 +58,36 @@ body.history {
   height: auto;
 }
 
-/* Texto superpuesto sobre la imagen */
+/* Estilos generales para la historia */
 .texto-historia {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.4em;
-  color: #000;
   width: 80%;
-  text-align: center;
+  color: #000;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 10px;
 }
+
+/* Estilo específico para pantallas grandes (PC) */
+@media (min-width: 769px) {
+  .texto-historia {
+    font-size: 2em; /* Tamaño de fuente más grande para pantallas de PC */
+    line-height: 1.8em;
+  }
+}
+
+/* Estilo específico para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .texto-historia {
+    margin-top: 30px;
+    font-size: 0.7em; /* Tamaño de fuente más pequeño para pantallas móviles */
+    line-height: 1.4em;
+  }
+}
+
 
 /* Barra inferior fija al fondo */
 .footer-bar {

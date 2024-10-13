@@ -31,7 +31,7 @@
       <span class="social-text">VISITA NUESTRAS REDES</span>
       <!-- Logos de redes sociales -->
       <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank">
+        <a href="https://www.facebook.com/sofia.tejos" target="_blank">
           <img src="{{ url_for('static', filename='fb.png') }}" alt="Facebook" class="social-icon">
         </a>
         <a href="https://www.instagram.com/huasodesauzal/?hl=es" target="_blank">
@@ -81,18 +81,27 @@
     </div>
   </section>
 
+  <section class="extra-background">
+    <img src="{{ url_for('static', filename='IMG_2030.jpeg') }}" alt="Nueva imagen de fondo" class="extra-image">
+    
+    <!-- Texto superpuesto alineado a la izquierda -->
+    <div class="extra-text-overlay">
+      <span class="linea-1">DESCUBRE</span>
+      <span class="linea-2">NUESTRA HISTORIA</span>
+    </div>
+  </section>
 
   <!-- Nueva imagen que reemplaza la caja con texto superpuesto -->
-<section class="extra-background">
-  <img src="{{ url_for('static', filename='Renán - copia.jpg') }}" alt="Nueva imagen de fondo" class="extra-image">
-  
-  <!-- Texto superpuesto alineado a la izquierda -->
-  <div class="extra-text-overlay">
-    <span class="linea-1">VISITA</span>
-    <span class="linea-1">NUESTRAS</span>
-    <span class="linea-2">REDES SOCIALES</span>
-  </div>
-</section>
+  <section class="extra-background2">
+    <img src="{{ url_for('static', filename='Renán - copia.jpg') }}" alt="Nueva imagen de fondo 2" class="extra-image2">
+    
+    <!-- Texto superpuesto alineado a la izquierda -->
+    <div class="extra-text-overlay2">
+      <span class="linea-1">VISITA</span>
+      <span class="linea-2">NUESTRAS REDES SOCIALES</span>
+    </div>
+  </section>
+
 
 
   <!-- Barra inferior con texto -->
@@ -105,24 +114,31 @@
     window.addEventListener('scroll', function() {
       var whiteBox = document.querySelector('.white-box');
       var extraImage = document.querySelector('.extra-image');
+      var extraImage2 = document.querySelector('.extra-image2'); // Nueva imagen para la sección extra-background2
       
-      // Get positions of both elements
+      // Obtener las posiciones de ambas imágenes
       var boxPosition = whiteBox.getBoundingClientRect().top;
       var imagePosition = extraImage.getBoundingClientRect().top;
-
-      // Adjust the threshold to trigger earlier
+      var imagePosition2 = extraImage2.getBoundingClientRect().top; // Posición de la nueva imagen
+  
+      // Ajustar el umbral para activar la transición
       var screenPosition = window.innerHeight / 1.2;
-
-      // Trigger the appear class
+  
+      // Activar la clase 'appear' cuando los elementos estén visibles
       if (boxPosition < screenPosition) {
         whiteBox.classList.add('appear');
       }
-
+  
       if (imagePosition < screenPosition) {
         extraImage.classList.add('appear');
       }
+  
+      if (imagePosition2 < screenPosition) { // Activar la transición de la nueva sección
+        extraImage2.classList.add('appear');
+      }
     });
   </script>
+  
 
 </body>
 </html>
