@@ -72,7 +72,10 @@
   <section class="content-box">
     <div class="white-box">
       <div class="box-content">
-        <h2 class="box-title">CONOCE NUESTROS VINOS</h2>
+        <!-- Envolver el texto en una etiqueta <a> -->
+        <a href="{{ url_for('nuestros_vinos') }}" class="box-link">
+          <h2 class="box-title">CONOCE NUESTROS VINOS</h2>
+        </a>
         <img src="{{ url_for('static', filename='chilena.webp') }}" alt="Botella de Vino" class="botella-img">
       </div>
     </div>
