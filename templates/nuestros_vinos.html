@@ -12,8 +12,11 @@
   <!-- Barra superior con logo y flecha de retroceso -->
   <header>
     <a href="{{ url_for('home') }}" class="back-arrow">←</a>
-    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
+    <a href="{{ url_for('home') }}"> <!-- Enlace al index -->
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
+    </a>
   </header>
+
 
   <!-- Título debajo de la barra -->
   <h1 class="page-title">NUESTROS VINOS</h1>

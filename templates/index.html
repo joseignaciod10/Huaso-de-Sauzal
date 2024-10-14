@@ -91,22 +91,24 @@
     <img src="{{ url_for('static', filename='fondo.jpg') }}" alt="Nueva imagen de fondo" class="extra-image">
     
     <!-- Texto superpuesto alineado a la izquierda -->
-    <div class="extra-text-overlay">
-      <span class="linea-1">DESCUBRE</span>
-      <span class="linea-2">NUESTRA HISTORIA</span>
-    </div>
+    <a href="{{ url_for('quienes_somos') }}" class="extra-text-overlay"> <!-- Enlace a la página "Quiénes Somos" -->
+      <div class="extra-text-overlay">
+        <span class="linea-1">DESCUBRE</span>
+        <span class="linea-2">NUESTRA HISTORIA</span>
+      </div>
+    </a>
   </section>
 
-  <!-- Nueva imagen que reemplaza la caja con texto superpuesto -->
+
   <section class="extra-background2">
     <img src="{{ url_for('static', filename='Renán - copia.jpg') }}" alt="Nueva imagen de fondo 2" class="extra-image2">
     
     <!-- Texto superpuesto alineado a la izquierda -->
-    <div class="extra-text-overlay2">
+    <div class="extra-text-overlay2" onclick="toggleMenu()"> <!-- Aquí llamamos a la función toggleMenu() al hacer clic -->
       <span class="linea-1">VISITA</span>
       <span class="linea-2">NUESTRAS REDES SOCIALES</span>
     </div>
-  </section>
+</section>
 
 
 
