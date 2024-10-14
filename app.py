@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, make_response
+import datetime
 from flask_sitemap import Sitemap
 
 app = Flask(__name__)
@@ -53,18 +54,21 @@ def sitemap():
     pages = []
     ten_days_ago = (datetime.datetime.now() - datetime.timedelta(days=10)).date().isoformat()
 
-    # Itera sobre todas las rutas de la aplicación
+    # Itera sobre todas las rutas de la aplicación Flask
     for rule in app.url_map.iter_rules():
-        # Ignora las rutas que tienen parámetros dinámicos
-        if "GET" in rule.methods and len(rule.defaults) >= len(rule.arguments):
-            url = url_for(rule.endpoint, **(rule.defaults or {}), _external=True)
+        # Ignora las rutas con parámetros dinámicos
+        if "GET" in rule.methods and len(rule.arguments) == 0:
+            url = url_for(rule.endpoint, _external=True)
+            print(f"URL generada: {url}")  # Agrega esta línea para verificar en la consola
             pages.append([url, ten_days_ago])
 
+    # Renderizar el template XML con las URLs
     sitemap_xml = render_template('sitemap_template.xml', pages=pages)
     response = make_response(sitemap_xml)
     response.headers["Content-Type"] = "application/xml"
 
     return response
+
 
 if __name__ == '__main__':
     app.run(debug=True)
