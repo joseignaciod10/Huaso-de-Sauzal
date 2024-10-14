@@ -1,6 +1,8 @@
 from flask import Flask, render_template
+from flask_sitemap import Sitemap
 
 app = Flask(__name__)
+ext = Sitemap(app=app)
 
 # Ruta para la página principal
 @app.route('/')
@@ -44,6 +46,25 @@ def historia_chilena():
 @app.route('/historia_garnacha')
 def historia_garnacha():
     return render_template('historia_garnacha.html')
+
+@app.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    """Genera el sitemap en formato XML."""
+    pages = []
+    ten_days_ago = (datetime.datetime.now() - datetime.timedelta(days=10)).date().isoformat()
+
+    # Itera sobre todas las rutas de la aplicación
+    for rule in app.url_map.iter_rules():
+        # Ignora las rutas que tienen parámetros dinámicos
+        if "GET" in rule.methods and len(rule.defaults) >= len(rule.arguments):
+            url = url_for(rule.endpoint, **(rule.defaults or {}), _external=True)
+            pages.append([url, ten_days_ago])
+
+    sitemap_xml = render_template('sitemap_template.xml', pages=pages)
+    response = make_response(sitemap_xml)
+    response.headers["Content-Type"] = "application/xml"
+
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)

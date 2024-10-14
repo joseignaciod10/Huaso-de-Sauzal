@@ -484,6 +484,18 @@ h1, h2, .texto-grande {
     padding: 20px 40px;
     z-index: 1;
   }
+  .texto-overlay .linea-1 {
+    display: inline-block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1.8em;
+    text-align: right;  /* Tamaño de la primera línea */
+  }
+  
+  .texto-overlay .linea-2 {
+    display: block;  /* Cada línea se mostrará como un bloque */
+    font-size: 1em; /* Tamaño de la segunda línea */
+    margin-top: 10px; /* Espaciado entre líneas */
+    text-align: right; /* Desplazamiento hacia la derecha */
+  }
   /* Texto superpuesto sobre imagen renan */
   .extra-text-overlay {
     text-align: right;
