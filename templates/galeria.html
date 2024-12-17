@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería El Viejo Almacén de Sauzal | Huaso de Sauzal | Vinos Artesanales</title>
+  <meta name="description" content="Galería de videos de El Viejo Almacén de Sauzal. Descubre la experiencia única de nuestros vinos artesanales y la historia detrás de ellos.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_contacto.css') }}">
+  <style>
+    /* Contenedor de videos */
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      max-width: 800px; /* Tamaño máximo de cada bloque de video */
+    }
+
+    .video-description {
+      flex: 1;
+      max-width: 250px;
+      text-align: left;
+      font-family: Arial, sans-serif;
+    }
+
+    .video-description h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .video-description p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    iframe {
+      flex: 2;
+      width: 100%;
+      height: 315px; /* Altura estándar de los videos de YouTube */
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Estilo responsivo para móviles */
+    @media (max-width: 768px) {
+      .video-item {
+        flex-direction: column; /* Cambia a una disposición vertical */
+        align-items: flex-start;
+      }
+
+      .video-description {
+        max-width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      iframe {
+        height: 200px; /* Reduce la altura del video en móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior con logo y flecha de retroceso -->
+  <header>
+    <a href="{{ url_for('home') }}" class="back-arrow">←</a>
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo Huaso de Sauzal" class="logo">
+    </a>
+  </header>
+
+  <h1 class="page-title">GALERÍA DE VIDEOS</h1>
+
+  <!-- Sección de videos -->
+  <main>
+    <div class="video-container">
+      <!-- Primer video -->
+      <div class="video-item">
+        <!-- Descripción del video -->
+        <div class="video-description">
+          <h3>Vinos naturales II</h3>
+          <p>En este capítulo hablaremos con Renán Cancino, sobre su proyecto el Huaso de Sauzal su historia y percepción de vinos naturales.</p>
+        </div>
+        <!-- Video -->
+        <iframe 
+          src="https://www.youtube.com/embed/NvGBVpUn5PI" 
+          title="Video de YouTube - El Viejo Almacén de Sauzal" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="video-item">
+        <div class="video-description">
+          <h3>Entre viñedos con el Huaso de Sauzal</h3>
+          <p>Viajamos hasta la localidad de Sauzal en la provincia de Cauquenes para conocer el trabajo de Renán Cancino, creador del reconocido vino de elaboración artesanal "El Huaso de Sauzal" que ha recorrido el mundo con su inconfundible sabor ¡Te invitamos a disfrutar!</p>
+        </div>
+        <iframe 
+          src="https://www.youtube.com/embed/jzopzNPMJew" 
+          title="Video de YouTube - La Experiencia Huaso de Sauzal" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <!-- Barra inferior con texto -->
+  <footer class="footer-bar">
+    <p>EL VIEJO ALMACÉN DE SAUZAL © - 2024</p>
+  </footer>
+
+</body>
+</html>
