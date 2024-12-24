@@ -10,8 +10,8 @@
     /* Contenedor de videos */
     .video-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column; /* Cambia a una distribución vertical */
+      align-items: center; /* Centra el contenido horizontalmente */
       gap: 20px;
       padding: 20px;
     }
@@ -22,6 +22,7 @@
       gap: 15px;
       width: 100%;
       max-width: 800px; /* Tamaño máximo de cada bloque de video */
+      margin: 0 auto; /* Centra cada fila */
     }
 
     .video-description {
@@ -29,6 +30,7 @@
       max-width: 250px;
       text-align: left;
       font-family: Arial, sans-serif;
+      text-align: justify;
     }
 
     .video-description h3 {
@@ -46,9 +48,23 @@
     iframe {
       flex: 2;
       width: 100%;
-      height: 315px; /* Altura estándar de los videos de YouTube */
       border: none;
       border-radius: 10px;
+    }
+
+    /* Estilo específico para videos de YouTube */
+    iframe[src*="youtube"] {
+      height: 300px; /* Altura estándar para videos de YouTube */
+     /* Altura estándar para videos de YouTube */
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Estilo mejorado para videos de Instagram */
+    iframe[src*="instagram"] {
+      aspect-ratio: 1 / 1; /* Mantén proporción cuadrada */
+      max-height: 100%; /* Ajusta automáticamente la altura */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
     }
 
     /* Estilo responsivo para móviles */
@@ -65,10 +81,11 @@
       }
 
       iframe {
-        height: 200px; /* Reduce la altura del video en móviles */
+        height: auto; /* Deja que el iframe ajuste automáticamente */
       }
     }
-  </style>
+</style>
+
 </head>
 <body>
 
@@ -113,6 +130,63 @@
           allowfullscreen>
         </iframe>
       </div>
+
+      <!-- Video de Instagram -->
+      <div class="video-item">
+        <div class="video-description">
+          <h3>@huasodesauzal</h3>
+          <p>Con el rastraje terminamos la primera etapa y la más importante del trabajo de suelo, Rotura, Camellón y Rastra, luego en 25 días o más dependiendo del sol y del calor seguiremos con la segunda etapa, esto no es un rescate lo heredamos de nuestros antepasados, así de trabaja un viñedo en Sauzal!!!</p>
+        </div>
+        <iframe 
+          src="https://www.instagram.com/p/CFQNy-LnJDO/embed" 
+          title="Video de Instagram - Historias de Huaso de Sauzal" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Video de Instagram -->
+      <div class="video-item">
+        <div class="video-description">
+          <h3>@huasodesauzal</h3>
+          <p>La Cruza, con esto terminamos las labores de suelo del viñedo, fíjense en la humedad de suelo todavía con la primera labor que hicimos la rotura de esto trata el trabajo de suelo, guardar la humedad del invierno para la primavera y el verano y que el viñedo madure equilibradamente la fruta, la sabiduría de la gente de campo no se debe menospreciar, seguro nos va a servir mucho en el futuro!!!</p>
+        </div>
+        <iframe 
+          src="https://www.instagram.com/p/CHneHDIHfOM/embed" 
+          title="Video de Instagram - Historias de Huaso de Sauzal" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Video de Instagram -->
+      <div class="video-item">
+        <div class="video-description">
+          <h3>@huasodesauzal</h3>
+          <p>Empezando los trabajos del viñedo, partimos sacando las Sierpes, este trabajo es muy necesario y consiste en eliminar los brotes de la base del tronco de algunas plantas que competirán por recursos con los brotes donde estará la fruta debilitando el viñedo, mermando su producción y la calidad, una vez hecho este trabajo y con la menguante de Junio iniciaremos la Poda, saludos a todos y todas!!!</p>
+        </div>
+        <iframe 
+          src="https://www.instagram.com/p/CP601KWnaXk/embed" 
+          title="Video de Instagram - Historias de Huaso de Sauzal" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- Video de Instagram -->
+      <div class="video-item">
+        <div class="video-description">
+          <h3>@huasodesauzal</h3>
+          <p>Trabajo de suelo, los pulmones de la Viticultura de Secano, para enfrentar una primavera larga y de calor, trabajo duro pero indispensable!!!</p>
+        </div>
+        <iframe 
+          src="https://www.instagram.com/reel/Cx-wtyxOyJT/embed" 
+          title="Video de Instagram - Historias de Huaso de Sauzal" 
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
     </div>
   </main>
 
